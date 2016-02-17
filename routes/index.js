@@ -18,6 +18,14 @@ exports.view = function(req, res){
 };
 
 exports.viewGrid = function(req, res) {
-	projects["grid"] = true;
-	res.render('index', projects);
+	var random_num = Math.random();
+	console.log(random_num);
+
+	if(random_num > 0.5) {
+		projects["grid"] = true;
+		res.render('index', projects);
+	}
+	else {
+		res.redirect('/');
+	}
 }
